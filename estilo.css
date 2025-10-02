@@ -1,0 +1,604 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: 300;
+  margin: 0;
+  /* deja espacio para que el contenido no quede debajo del header */
+}
+
+main {
+  max-width: 900px;
+  /* contenido centrado */
+  margin: 0 auto;
+}
+
+
+/*                    Aqui empieza el header y el submenu                              */
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  padding: 10px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0 20px;
+}
+
+nav {
+  max-width: 800px;
+  /* limita el nav al mismo ancho que el contenido */
+  margin: 0 auto;
+  height: 110%;
+  /* se adapta a la altura del header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 120px;
+  /* tamaño fijo */
+  height: auto;
+  /* mantiene proporción */
+  margin-left: 20px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+
+}
+
+/* esto hace modifica los items que esten dentro del nav */
+nav ul li {
+  display: inline-block;
+  position: relative;
+  /* NECESARIO para el submenu */
+  transition: 0.4s;
+}
+
+nav ul ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li:hover {
+  background-color: #e7f580;
+  border-radius: 20px;
+  /* bordes redondeados */
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+nav li ul {
+  z-index: 2000;
+  display: none;
+  position: absolute;
+  top: 100%;
+  /* justo debajo del padre */
+  left: 0;
+  min-width: 160px;
+  background: #f5f5f5;
+}
+
+nav li ul li {
+  display: block;
+}
+
+
+.nav li:hover>ul {
+  display: block;
+}
+
+/*                     Aqui empieza el buscador                */
+/* Contenedor del buscador */
+.search-box {
+  display: flex;
+  /* Alinea el input y el botón en fila (uno al lado del otro) */
+  align-items: center;
+  /* Centra verticalmente el input y el botón */
+  background: #fff;
+  /* Fondo blanco del buscador */
+  border: 1px solid #ccc;
+  /* Borde gris claro */
+  border-radius: 20px;
+  /* Bordes redondeados (forma de píldora) */
+  padding: 5px 10px;
+  /* Espaciado interno (arriba/abajo 5px, lados 10px) */
+  margin-left: 20px;
+  /* Espacio hacia la izquierda (separa del menú) */
+}
+
+/* El campo de texto (input) */
+.search-box input {
+  border: none;
+  /* Quita el borde por defecto */
+  outline: none;
+  /* Quita el borde azul al hacer clic */
+  padding: 5px 10px;
+  /* Espacio interno (texto más cómodo) */
+  font-size: 14px;
+  /* Tamaño de la letra */
+  border-radius: 20px;
+  /* Bordes redondeados (armoniza con el contenedor) */
+}
+
+/* El botón (lupa ) */
+.search-box button {
+  background: #e7f580;
+  /* Color de fondo (rojo/rosado suave) */
+  border: none;
+  /* Quita borde por defecto */
+  color: white;
+  /* Color del icono o texto en el botón */
+  font-size: 14px;
+  /* Tamaño del texto/icono dentro del botón */
+  padding: 5px 10px;
+  /* Espaciado interno */
+  border-radius: 20px;
+  /* Bordes redondeados */
+  cursor: pointer;
+  /* Cambia el cursor a manito */
+  transition: 0.3s;
+  /* Suaviza la animación al hacer hover */
+}
+
+/* Efecto hover en el botón */
+.search-box button:hover {
+  background: #b2ca00;
+  /* Cambia a un color mas oscuro al pasar el mouse */
+}
+
+.logo-busqueda {
+  width: 16px;
+  /* Tamaño del icono de la lupa */
+  height: auto;
+  /* Mantiene proporción */
+}
+
+/*                      Aqui termina el buscador                          */
+
+
+
+/*                       Aqui termina el header y el submenu                              */
+
+
+/* Aqui empieza el body */
+
+h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  text-align: center;
+  margin: 20px 0;
+  flex-direction: column;
+  font-size: 50px;
+  color: #839402;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+  padding: 90px 20px;
+   /* mueve todo el contenido (texto + imagen) */
+}
+
+
+.hero-content h1 {
+  flex: 1;
+  max-width: none;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  padding-left: 30px;
+  max-height: 300px;
+}
+
+.fondos-hilos {
+  flex: 1;           /* la imagen ocupa menos espacio */
+  max-width: 380px;
+}
+
+
+.titulo-empresa{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  text-align: center;
+  margin: 20px 0;
+  flex-direction: column;
+  font-size: 20px;
+ color: #839402;
+}
+
+p{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  display: flex;
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 20px 0;
+  padding: 0 20px;
+  text-align: center;
+  text-justify: inter-word;
+  color: #333;
+}
+
+
+
+
+
+/*                         Aquie empieza el cotenido de las tarjetas                 */
+.tarjetas-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; /* se acomodan en móvil */
+  margin: 20px 0;
+}
+
+.tarjeta {
+  background: #ffffff;
+  /* border-radius: 80px; */
+  padding: 15px;
+  max-width: 190px;
+  text-align: center;
+  /* box-shadow: 0 4px 8px rgba(0,0,0,0.2); */
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.tarjeta img {
+  width: 100%;
+  height: 170px;       /* altura fija */
+  object-fit: cover;   /* recorta la imagen manteniendo proporción */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+.tarjeta h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  padding-bottom: 5px;
+}
+
+.tarjeta p {
+  font-size: 14px;
+  color: #333;
+}
+
+.boton-container {
+    text-align: center;
+    margin-top: 10px;
+}
+.boton-container a {
+    text-decoration: none;
+    color: #000000;
+    display: inline-block;
+    border-radius: 10px
+}
+
+.boton {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 12px 20px;
+    background-color: #abd409;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #abd409b2;
+}
+
+
+/*                                    Logos de marcas                   */
+
+.logos-marcas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  gap: 5rem;
+}
+.logos-marcas a:hover {
+  transform: translateY(-5px);  /** Agregado: Efecto al pasar el mouse **/
+}
+
+.logos-marcas a {
+  display: inline-block;
+  transition: transform 0.3s ease;      /** Agregado: Transición al pasar el mouse **/
+}
+
+.logos-marcas img {
+  max-width: 100px;
+  height: auto;
+}
+
+.nosotros {
+  border-radius: 20px;
+    width: 40%;
+  /* tamaño fijo */
+  height: auto;
+  /* mantiene proporción */
+  margin-left: 70px;
+}
+
+.somos {
+  display: flex;
+  width: 100%;
+  max-width: 600px;        /* ancho máximo para que el texto no quede de lado a lado */
+  margin-left: auto;       /* empuja el bloque a la derecha */
+  margin-right: 80px;      /* deja un espacio con el borde derecho */
+  margin-top: -270px;       /* súbelo un poco (ajusta el valor a tu gusto) */
+  text-align: right;       /* alinea el texto hacia la derecha */
+  font-size: 16px;
+  line-height: 1.5;        /* mejora la lectura en textos largos */
+}
+
+.colores{
+  width: 30%;             /* que la imagen ocupe solo una parte */
+  float: right;      
+  margin-left: 200px;      /* imagen a la derecha */
+  margin: 100px;           /* separa la imagen del texto */
+  border-radius: 20px;
+  margin-top: 40px;
+}
+
+.somos2{
+  width: 100%;
+  max-width: 600px;        /* ancho máximo para que el texto no quede de lado a lado */
+  margin-left: 50px;       /* empuja el bloque a la derecha */
+  margin-right: 450px;      /* deja un espacio con el borde derecho */
+  margin-top: 5%;       /* súbelo un poco (ajusta el valor a tu gusto) */
+  text-align: left;       /* alinea el texto hacia la izquierda */
+  font-size: 16px;
+  line-height: 1.5;        /* mejora la lectura en textos largos */
+}
+
+.titulo-empresa2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+  text-align: center;
+  margin: 20px 0;
+  flex-direction: column;
+  font-size: 20px;
+  color: #839402;
+  margin-top: 200px;
+}
+
+.logos-marcas2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;   /* para que bajen en varias filas si no caben */
+  gap: 2rem;         /* gap  */
+  margin: 20px 0;
+}
+
+.logos-marcas2 img {
+  max-width: 100%;   /* ocupa solo el ancho disponible */
+  width: 200px;      /* tamaño base */
+  height: auto;
+  object-fit: contain;
+}
+
+
+/*                 aqui termina la seccion nosotros y el body */
+
+
+
+
+
+/*           Aqui empieza el footer           */
+
+footer {
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.82);
+  padding: 0 20px; /* la única que hace efecto */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+  gap: 30px;
+}
+
+.footer-col.footer-left {
+  flex: 400px;
+  padding: 40px 0;
+  text-align: left ;
+}
+
+
+
+.footer-col p,
+.footer-col address {
+  margin: 8px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.footer-col a {
+  display: inline-block;
+  margin: 5px 0;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.logo-footer {
+  width: 190px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-center a {
+  margin: 0 12px;
+  text-decoration: none; /* quita línea azul */
+}
+
+.footer-center a:visited,
+.footer-center a:hover {
+  text-decoration: none;
+}
+
+.footer-icon {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s;
+}
+
+.footer-icon:hover {
+  transform: scale(1.2);
+}
+
+.footer-col h3,
+.footer-col h4 {
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 18px;
+}
+
+
+
+/*       Media query                 */
+
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+
+  .tarjeta {
+    max-width: 100%;
+  }
+
+  .somos, .somos2 {
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .colores {
+    width: 90%;
+    margin: 20px auto;
+    float: none;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .logos-marcas2 {
+    gap: 1rem;
+  }
+  .logos-marcas2 img {
+    width: 120px;
+  }
+  .hero-content {
+    flex-direction: column; /* apila texto e imagen */
+    text-align: center;
+  }
+   .fondos-hilos {
+    margin-top: 20px;
+    max-width: 80%;  /* que se vea grande en móvil */
+  }
+}
+
+/*  Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .tarjeta {
+    max-width: 45%;
+  }
+
+  nav ul {
+    gap: 5px;
+  }
+   .logos-marcas2 img {
+    width: 180px;
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  .tarjeta {
+    max-width: 30%;
+  }
+  .logos-marcas2 img {
+    width: 220px;
+  }
+}
+
+/*  Desktop grande (1200px en adelante) */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  .tarjeta {
+    max-width: 220px;
+  }
+   .logos-marcas2 img {
+    width: 300px;
+  }
+}
